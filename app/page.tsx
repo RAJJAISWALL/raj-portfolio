@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const container = {
   hidden: { opacity: 0 },
@@ -23,6 +22,7 @@ const fadeUp = {
     },
   },
 };
+
 
 
 const fadeIn = {
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {/* Update href to your actual resume path or a public URL */}
+              {/* Put your PDF in /public and keep the same name OR change the href to match */}
               <a
                 href="/Raj%20Jaiswal%20-%20Software%20Developer.pdf"
                 download
@@ -150,10 +150,7 @@ export default function Home() {
           </motion.div>
 
           {/* Right side */}
-          <motion.aside
-            className="flex flex-col gap-3"
-            variants={container}
-          >
+          <motion.aside className="flex flex-col gap-3" variants={container}>
             <motion.div
               variants={fadeUp}
               className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-4"
@@ -207,7 +204,7 @@ export default function Home() {
               <div className="flex flex-col gap-1 text-[0.8rem] text-slate-300">
                 <span>📱 +91-8104918697</span>
                 <span>
-                  ✉️{" "}
+                 ✉️{" "}
                   <a
                     href="mailto:rajjaiswal0902@gmail.com"
                     className="text-sky-400 hover:underline"
@@ -243,7 +240,7 @@ export default function Home() {
           <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-400">
             <span className="text-sky-400">01</span> · About
           </h2>
-          <div className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-5 text-sm text-slate-300 leading-relaxed">
+          <div className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-5 text-sm leading-relaxed text-slate-300">
             I am a Software Developer with 2.6+ years of experience working
             across the stack — from PHP/Laravel backends to modern JavaScript
             frontends using React.js and AngularJS. I enjoy turning complex
@@ -526,65 +523,4 @@ export default function Home() {
                   Bachelor of Science in Information Technology
                 </div>
                 <div className="text-xs text-sky-400">
-                  S.I.W.S College, Wadala, Mumbai · University of Mumbai
-                </div>
-                <div className="text-[0.75rem] text-slate-400">
-                  CGPA: 7.60 / 10.0
-                </div>
-              </div>
-              <div className="text-[0.75rem] text-slate-400">2020 – 2023</div>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* CONTACT */}
-        <motion.section
-          id="contact"
-          className="mt-10"
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-400">
-            <span className="text-sky-400">06</span> · Contact
-          </h2>
-          <div className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-5 text-[0.85rem] text-slate-300">
-            <div className="flex flex-wrap gap-2">
-              <span>
-                📱 <strong>Phone:</strong> +91-8104918697
-              </span>
-              <span className="text-slate-600">·</span>
-              <span>
-                ✉️ <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:rajjaiswal0902@gmail.com"
-                  className="text-sky-400 hover:underline"
-                >
-                  rajjaiswal0902@gmail.com
-                </a>
-              </span>
-              <span className="text-slate-600">·</span>
-              <span>
-                🔗 <strong>LinkedIn:</strong>{" "}
-                <a
-                  href="https://www.linkedin.com/in/raj-jaiswall/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sky-400 hover:underline"
-                >
-                  linkedin.com/in/raj-jaiswall
-                </a>
-              </span>
-            </div>
-          </div>
-        </motion.section>
-
-        <footer className="mt-6 border-t border-slate-800 pt-3 text-center text-[0.7rem] text-slate-500">
-          © {new Date().getFullYear()} · Built by Raj Jaiswal · Software
-          Developer
-        </footer>
-      </main>
-    </div>
-  );
-}
+                  S.I.W.S College, Wadala, M
