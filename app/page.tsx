@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -12,7 +12,7 @@ const container = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
@@ -23,18 +23,16 @@ const fadeUp = {
   },
 };
 
-
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
+const fadeIn: Variants = {
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    y: 0,
     transition: {
       duration: 0.5,
     },
   },
 };
+
 
 export default function Home() {
   return (
@@ -507,7 +505,6 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* EDUCATION */}
         <motion.section
           id="education"
           className="mt-10"
@@ -526,4 +523,66 @@ export default function Home() {
                   Bachelor of Science in Information Technology
                 </div>
                 <div className="text-xs text-sky-400">
-                  S.I.W.S College, Wadala, M
+                  S.I.W.S College, Wadala, Mumbai · University of Mumbai
+                </div>
+                <div className="text-[0.75rem] text-slate-400">
+                  CGPA: 7.60 / 10.0
+                </div>
+              </div>
+              <div className="text-[0.75rem] text-slate-400">2020 – 2023</div>
+            </div>
+          </div>
+        </motion.section>
+
+          {/* CONTACT */}
+          <motion.section
+          id="contact"
+          className="mt-10"
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+        >
+
+<h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-400">
+            <span className="text-sky-400">06</span> · Contact
+          </h2>
+          <div className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-5 text-[0.85rem] text-slate-300">
+            <div className="flex flex-wrap gap-2">
+              <span>
+                📱 <strong>Phone:</strong> +91-8104918697
+              </span>
+              <span className="text-slate-600">·</span>
+              <span>
+                ✉️ <strong>Email:</strong>{" "}
+                <a
+                  href="mailto:rajjaiswal0902@gmail.com"
+                  className="text-sky-400 hover:underline"
+                >
+                  rajjaiswal0902@gmail.com
+                </a>
+              </span>
+              <span className="text-slate-600">·</span>
+              <span>
+                🔗 <strong>LinkedIn:</strong>{" "}
+                <a
+                  href="https://www.linkedin.com/in/raj-jaiswall/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sky-400 hover:underline"
+                >
+                    linkedin.com/in/raj-jaiswall
+                </a>
+              </span>
+            </div>
+          </div>
+        </motion.section>
+
+        <footer className="mt-6 border-t border-slate-800 pt-3 text-center text-[0.7rem] text-slate-500">
+          © {new Date().getFullYear()} · Built by Raj Jaiswal · Software
+          Developer
+        </footer>
+      </main>
+    </div>
+  );
+}
