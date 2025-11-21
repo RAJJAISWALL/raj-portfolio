@@ -176,15 +176,15 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {/* Resume download */}
               <motion.a
                 href="/Raj%20Jaiswal%20-%20Software%20Developer.pdf"
-                download
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 px-4 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/30"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <span>Download Resume</span>
+                <span>View Resume</span>
               </motion.a>
               <motion.a
                 href="#projects"
@@ -255,11 +255,14 @@ export default function Home() {
                 <span>
                   ✉️{" "}
                   <a
-                    href="mailto:rajjaiswal0902@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rajjaiswal0902@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-sky-400 hover:underline"
                   >
                     rajjaiswal0902@gmail.com
                   </a>
+
                 </span>
                 <span>
                   🔗{" "}
@@ -277,7 +280,7 @@ export default function Home() {
           </motion.aside>
         </motion.section>
 
-        {/* ABOUT */}
+        {/* ABOUT – now more content-heavy */}
         <motion.section
           id="about"
           className="mt-10"
@@ -290,14 +293,67 @@ export default function Home() {
             <span className="text-sky-400">01</span> · About
           </h2>
           <div className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-5 text-sm leading-relaxed text-slate-300">
-            I am a Software Developer with 2.6+ years of experience working
-            across the stack — from PHP/Laravel backends to modern JavaScript
-            frontends using React.js and AngularJS. I enjoy turning complex
-            requirements into clean, efficient, and maintainable code while
-            always keeping performance and user experience in mind. I&apos;ve
-            improved load times, reduced critical bugs in production, and
-            collaborated closely with cross-functional teams in Agile
-            environments to deliver features reliably.
+            <p>
+              I am a Software Developer with 2.6+ years of hands-on experience
+              working across the stack — from PHP/Laravel backends to modern
+              JavaScript frontends using React.js and AngularJS. I enjoy taking
+              products from &quot;idea&quot; to &quot;in production&quot; and
+              I&apos;m especially driven by performance, code quality, and
+              creating experiences that feel fast and intuitive for users.
+            </p>
+
+            <p className="mt-3">
+              Over the last few years, I&apos;ve worked on applications serving
+              1,000+ active users, optimized slow and legacy codebases, and
+              collaborated with designers, product owners, and QA teams in Agile
+              environments. My work spans debugging production issues, building
+              reusable UI components, designing REST APIs, and improving overall
+              system reliability.
+            </p>
+
+            <div className="mt-5 grid gap-5 text-[0.82rem] md:grid-cols-3">
+              <div>
+                <div className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  What I Do
+                </div>
+                <ul className="space-y-1.5 text-slate-300/90">
+                  <li>• Build performant, responsive web interfaces</li>
+                  <li>• Design and consume RESTful APIs</li>
+                  <li>• Refactor legacy code into clean modules</li>
+                  <li>• Solve production bugs under real constraints</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  How I Work
+                </div>
+                <ul className="space-y-1.5 text-slate-300/90">
+                  <li>• Start with clarity on requirements &amp; edge cases</li>
+                  <li>• Break features into small, shippable pieces</li>
+                  <li>• Use Git, code reviews &amp; documentation</li>
+                  <li>• Measure impact with metrics, not guesses</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Impact &amp; Highlights
+                </div>
+                <ul className="space-y-1.5 text-slate-300/90">
+                  <li>• Improved app performance by 30–40%</li>
+                  <li>• Resolved 50+ critical production issues</li>
+                  <li>• Helped maintain 99.5%+ uptime</li>
+                  <li>• Contributed to both frontend &amp; backend features</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="mt-5 text-[0.82rem] text-slate-400">
+              Outside of work, I actively explore Python, Flask, and Machine
+              Learning — building small experiments and tools that automate
+              workflows, analyse data, or make everyday tasks a little smarter.
+            </p>
           </div>
         </motion.section>
 
@@ -589,20 +645,42 @@ export default function Home() {
             <span className="text-sky-400">05</span> · Education
           </h2>
           <div className="rounded-2xl border border-slate-700/60 bg-slate-950/90 p-5">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <div>
-                <div className="text-sm font-semibold text-slate-100">
-                  Bachelor of Science in Information Technology
+            <div className="space-y-5">
+              {/* PGDM – Welingkar */}
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div>
+                  <div className="text-sm font-semibold text-slate-100">
+                    Post-Graduate Diploma in Management — (IT Projects Management)
+                  </div>
+                  <div className="text-xs text-sky-400">
+                    Welingkar Institute of Management Development and Research
+                  </div>
+                  {/* If you ever need extra details, you can add another line here */}
+                  {/* <div className="text-[0.8rem] text-slate-400">Some extra details</div> */}
                 </div>
-                <div className="text-xs text-sky-400">
-                  S.I.W.S College, Wadala, Mumbai
-                </div>
-                <div className="text-[0.8rem] text-slate-400">
-                  University of Mumbai · CGPA: 7.60 / 10.0
+                <div className="text-[0.8rem] italic text-slate-400">
+                  2023 – Present
                 </div>
               </div>
-              <div className="text-[0.8rem] italic text-slate-400">
-                2020 – 2023
+
+              <div className="h-px bg-slate-800/70" />
+
+              {/* BSc IT – S.I.W.S */}
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div>
+                  <div className="text-sm font-semibold text-slate-100">
+                    Bachelor of Science in Information Technology
+                  </div>
+                  <div className="text-xs text-sky-400">
+                    S.I.W.S College, Wadala, Mumbai
+                  </div>
+                  <div className="text-[0.8rem] text-slate-400">
+                    University of Mumbai · CGPA: 7.60 / 10.0
+                  </div>
+                </div>
+                <div className="text-[0.8rem] italic text-slate-400">
+                  2020 – 2023
+                </div>
               </div>
             </div>
           </div>
