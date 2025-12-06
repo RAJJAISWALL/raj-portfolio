@@ -177,7 +177,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3">
               <motion.a
-                href="/Raj%20Jaiswal%20-%20Software%20Developer.pdf"
+                href="/raj-jaiswal-software-developer.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 px-4 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/30"
