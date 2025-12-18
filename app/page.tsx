@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useScroll, useSpring, motion, type Variants } from "framer-motion";
+import GreetingScreen from "./components/GreetingScreen";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -33,7 +35,7 @@ const fadeIn: Variants = {
   },
 };
 
-export default function Home() {
+function Portfolio() {
   // Scroll progress bar at the top
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -688,4 +690,19 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export default function Home() {
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    if (!entered) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [entered]);
+
+  if (!entered) {
+    return <GreetingScreen onEnter={() => setEntered(true)} />;
+  }
+
+  return <Portfolio />;
 }
