@@ -1,51 +1,51 @@
-import Section from "../components/Section";
-import { motion } from "framer-motion";
-import TextType from "../components/TextType";
+import { motion, useReducedMotion } from "framer-motion";
 
-export default function Greeting({ onEnter }) {
-  const enterPortfolio = () => {
-    if (typeof onEnter === "function") {
-      onEnter();
-      return;
-    }
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+};
 
-    window.scrollTo({
-      left: window.innerWidth,
-      behavior: "smooth",
-    });
-  };
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+};
+
+export default function Greeting() {
+  const reduce = useReducedMotion();
 
   return (
-    <Section>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-center text-white max-w-3xl"
-      >
-        <p className="text-gray-400 text-lg mb-4">Hello, I'm</p>
+    <section id="home" className="relative overflow-hidden bg-grid">
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className={[
+            "absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full blur-3xl",
+            "bg-gradient-to-tr from-[rgb(var(--a1))]/30 via-[rgb(var(--a2))]/20 to-transparent",
+            reduce ? "" : "animate-gradient-slow",
+          ].join(" ")}
+        />
+      </div>
 
-        <h1 className="text-7xl font-extrabold mb-6">Raj Jaiswal</h1>
-
-        <p className="text-gray-300 text-xl mb-10">
-          <TextType
-            texts={[
-              "Software Developer",
-              "Full Stack Engineer",
-              "React • Tailwind • Vite",
-            ]}
-            className="font-medium"
-            cursorClassName="ml-1 text-indigo-300"
-          />
-        </p>
-
-        <button
-          onClick={enterPortfolio}
-          className="px-8 py-4 rounded-full text-lg bg-indigo-500 hover:bg-indigo-600 transition shadow-lg"
+      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+        <motion.div
+          variants={container}
+          initial={reduce ? false : "hidden"}
+          animate="show"
+          className="max-w-3xl"
         >
-          Enter Portfolio
-        </button>
-      </motion.div>
-    </Section>
+          <motion.p variants={item} className="text-sm text-white/70">
+            Software Developer 
+          </motion.p>
+
+          <motion.h1 variants={item} className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-6xl">
+            Raj Jaiswal
+          </motion.h1>
+
+          <motion.p variants={item} className="mt-5 text-base leading-7 text-white/70 md:text-lg">
+              building scalable web apps with AngularJS, React/Next.js, and PHP/Laravel.
+            Focused on performance, maintainable UI architecture, and production reliability.
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
   );
 }

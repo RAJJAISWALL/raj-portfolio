@@ -5,12 +5,34 @@ export default function Contact() {
     <Section id="contact">
       <div className="text-white text-center">
         <h2 className="text-4xl mb-6">Get In Touch</h2>
-        <p className="text-gray-400 leading-relaxed">
-          📧 rajjaiswal0902@gmail.com <br />
-          📱 +91-8104918697 <br />
-          https://www.linkedin.com/in/raj-jaiswall/<br></br>
-          https://github.com/RAJJAISWALL
-        </p>
+        <div className="text-gray-300 leading-relaxed space-y-3">
+          <a
+            href="mailto:rajjaiswal0902@gmail.com"
+            className="block text-indigo-300 hover:text-indigo-200 underline"
+          >
+            rajjaiswal0902@gmail.com
+          </a>
+
+         
+
+          <a
+            href="https://www.linkedin.com/in/raj-jaiswall/"
+            className="block text-indigo-300 hover:text-indigo-200 underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin.com/in/raj-jaiswall
+          </a>
+
+          <a
+            href="https://github.com/RAJJAISWALL"
+            className="block text-indigo-300 hover:text-indigo-200 underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            github.com/RAJJAISWALL
+          </a>
+        </div>
       </div>
     </Section>
   );
